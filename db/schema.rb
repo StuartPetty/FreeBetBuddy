@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417194303) do
+ActiveRecord::Schema.define(version: 20150418004918) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -28,10 +28,41 @@ ActiveRecord::Schema.define(version: 20150417194303) do
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace"
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
 
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "maincontent"
+    t.string   "author"
+    t.string   "authoremail"
+    t.boolean  "featured"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "betfooters", force: :cascade do |t|
+    t.string   "bookie"
+    t.integer  "offerprice"
+    t.string   "offerlink"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "footerpromos", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "freebets", force: :cascade do |t|
     t.string "Title"
     t.string "Description"
     t.string "LinkForOffer"
+  end
+
+  create_table "freebetsfooters", force: :cascade do |t|
+    t.string   "bookie"
+    t.integer  "moneyoff"
+    t.string   "offerlink"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "site_seos", force: :cascade do |t|
@@ -51,8 +82,12 @@ ActiveRecord::Schema.define(version: 20150417194303) do
 
   create_table "tests", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
@@ -68,6 +103,10 @@ ActiveRecord::Schema.define(version: 20150417194303) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

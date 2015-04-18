@@ -2,38 +2,19 @@ class HomeController < ApplicationController
 
 def index
 
-	@test = Test2.all
+	@test = Test.all
 
 end
 
+def index
 
 
-	
-
-
-
-def create
-
-	@freebets = freebet.create( user_params )
-
-
-end
-
-private
-
-def user_params
-  params.require(:freebet).permit(:bookieslogo)
-end
-
-
-def show
-	@test = test.show(test_params)
+	@bettingfooterpromos = Betfooter.all
 	
 end
 
-def test_params
-	params.require(:name)
 
-end
+
+
 
 end

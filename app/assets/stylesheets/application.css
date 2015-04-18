@@ -7,10 +7,34 @@
 .bettingblock{
 
 
-	padding 55px;
-	font-size: 100px;
+	padding: 1%;
+	font-size: 22px;
+	color: white;
+	background-color: grey;
+	margin-top: 12px;
+	width:30%;
 }
 
 
 
+.footerpromo{
 
+
+
+	font-size: 1.5em;
+	color:white;
+	background-color: #7e7e7e;
+	width :30%;
+	font-family: 'Lato', sans-serif;
+	font-weight: 400;
+	padding-left: 70%
+
+
+}
+
+.footer{
+
+	width:100%;
+	background-color: black;
+	height:400px;
+}

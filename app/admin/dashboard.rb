@@ -10,6 +10,21 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
+    # columns do
+
+    #     column do
+
+    #         panel "Recent Posts"
+
+    #         ul do
+
+    #             Test.recent(5).map.do |test|
+
+
+    #         end
+    #     end
+    
+
     # Here is an example of a simple dashboard with columns and panels.
     #
     # columns do

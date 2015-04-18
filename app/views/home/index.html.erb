@@ -1,17 +1,23 @@
-<h1> Welcome</h1>
 
 
 
 
 
 
- <% @test.each do |test| %>
- 	<div class="bettingblock" style="padding:5%;width:148px;font-size:12px;font-color:blue;">    <p><%= test.name %></p> </br>
-    <p><%= test.price %></p> </br>
-    <p><%= test.decription %></p> </br>
+
+
 
  
-</div>
- 
 
+		<div class="footer">
+	<% @bettingfooterpromos.each do |bettingfooterpromo| %>
+					<li>
+						
+						<div class="footerpromo">
+						
+						<%= bettingfooterpromo.bookie %>
+						£<%= bettingfooterpromo.offerprice %>
+						- <%= link_to "Get Offer", bettingfooterpromo.offerlink %>
+					</li>
+						
  <%end%>
